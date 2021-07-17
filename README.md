@@ -12,5 +12,3 @@ EdgeBoard-VMX 加速卡适用于深度学习加速，能够解决复杂的人工
 
 ## OpenVINO
 
-## NCS
-
