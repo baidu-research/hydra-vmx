@@ -7,17 +7,17 @@ Target: RK3399-Firefly w/ Android 7.1
 
 ```
 Android Version API level & NDK release
-Android10	10		API level 29
-Pie			9		API level 28
+Android10	10  	API level 29
+Pie 		9   	API level 28
 Oreo		8.1.0	API level 27
 Oreo		8.0.0	API level 26
-Nougat		7.1		API level 25
-Nougat		7.0		API level 24
+Nougat		7.1  	API level 25
+Nougat		7.0 	API level 24
 ```
 
 Directory Tree:
 ```
-vxp@vxp:~/projects/android$ tree -L 1
+$ tree -L 1
 .
 ├── android-ndk
 ├── android-ndk-r20-linux-x86_64.zip
@@ -36,26 +36,28 @@ vxp@vxp:~/projects/android$ tree -L 1
 ```
 
 General Dependencies Setup (optional):
+- Ubuntu 16 LTS
 ```
-Ubuntu 16 LTS
-	sudo apt-get install --assume-yes build-essential git
-	sudo apt-get install --assume-yes pkg-config unzip ffmpeg qtbase5-dev python-dev python3-dev python-numpy python3-numpy
-	sudo apt-get install --assume-yes libopencv-dev libgtk-3-dev libdc1394-22 libdc1394-22-dev libjpeg-dev libpng12-dev libtiff5-dev libjasper-dev
-	sudo apt-get install --assume-yes libavcodec-dev libavformat-dev libswscale-dev libxine2-dev libgstreamer0.10-dev libgstreamer-plugins-base0.10-dev
-	sudo apt-get install --assume-yes libv4l-dev libtbb-dev libfaac-dev libmp3lame-dev libopencore-amrnb-dev libopencore-amrwb-dev libtheora-dev
-	sudo apt-get install --assume-yes libvorbis-dev libxvidcore-dev v4l-utils vtk6
-	sudo apt-get install --assume-yes libatlas-base-dev libblas-dev liblapacke-dev libopenblas-dev libgdal-dev checkinstall
-Ubuntu 18 LTS
-	sudo apt install build-essential cmake git pkg-config libgtk-3-dev \
-		libavcodec-dev libavformat-dev libswscale-dev libv4l-dev \
-		libxvidcore-dev libx264-dev libjpeg-dev libpng-dev libtiff-dev \
-		gfortran openexr libatlas-base-dev python3-dev python3-numpy \
-		libtbb2 libtbb-dev libdc1394-22-dev
+sudo apt-get install --assume-yes build-essential git
+sudo apt-get install --assume-yes pkg-config unzip ffmpeg qtbase5-dev python-dev python3-dev python-numpy python3-numpy
+sudo apt-get install --assume-yes libopencv-dev libgtk-3-dev libdc1394-22 libdc1394-22-dev libjpeg-dev libpng12-dev libtiff5-dev libjasper-dev
+sudo apt-get install --assume-yes libavcodec-dev libavformat-dev libswscale-dev libxine2-dev libgstreamer0.10-dev libgstreamer-plugins-base0.10-dev
+sudo apt-get install --assume-yes libv4l-dev libtbb-dev libfaac-dev libmp3lame-dev libopencore-amrnb-dev libopencore-amrwb-dev libtheora-dev
+sudo apt-get install --assume-yes libvorbis-dev libxvidcore-dev v4l-utils vtk6
+sudo apt-get install --assume-yes libatlas-base-dev libblas-dev liblapacke-dev libopenblas-dev libgdal-dev checkinstall
+```
+- Ubuntu 18 LTS
+```
+sudo apt install build-essential cmake git pkg-config libgtk-3-dev \
+	libavcodec-dev libavformat-dev libswscale-dev libv4l-dev \
+	libxvidcore-dev libx264-dev libjpeg-dev libpng-dev libtiff-dev \
+	gfortran openexr libatlas-base-dev python3-dev python3-numpy \
+	libtbb2 libtbb-dev libdc1394-22-dev
 ```
 
 Upgrade CMAKE:
 ```
-Download & install at least version 3.6 from https://cmake.org/files we tried 3.11.4 & 3.15.1
+// Download & install at least version 3.6 from https://cmake.org/files we tried 3.11.4 & 3.15.1
 sudo apt-get remove cmake   // if the old version doesn't match requirement
 ./bootstrap
 make -j2
@@ -89,12 +91,12 @@ mv android-ndk-r20 android-ndk
 
 Platform Tools:
 ```
-Download platform-tools_r30.0.3-linux.zip 
+// Download platform-tools_r30.0.3-linux.zip from Android
 https://developer.android.com/studio/releases/platform-tools#downloads
-setup to:
+// Setup to:
 ~/projects/android/platform-tools
 
-Modify ~/.bashrc to the corrected path:
+// Modify ~/.bashrc to the corrected path:
 export ANDROID_NDK_HOME="~/projects/android/android-ndk"
 export ANDROID_PLATFORM_TOOLS="~/projects/android/platform-tools"
 export ANDROID_TOOLCHAIN="$ANDROID_NDK_HOME/toolchains/llvm/prebuilt/linux-x86_64"
@@ -184,21 +186,21 @@ wget https://download.01.org/opencv/2020/openvinotoolkit/2020.3/open_model_zoo/m
 
 Setup Target:
 ```
-#Change permissions
+// Change permissions
 adb shell
 su
 chmod 777 -R /data/local
-#push openvino
+// push openvino
 adb push ~/projects/android/openvino/bin/aarch64/ /data/local/
-#push opencv
+// push opencv
 adb push ~/projects/android/opencv/build/out/sdk/native/libs/arm64-v8a/* /data/local/aarch64/Release/lib/
-#push libusb
+// push libusb
 adb push ~/projects/android/openvino/inference-engine/temp/vpu/libusb/libs/arm64-v8a/libusb1.0.so /data/local/aarch64/Release/lib/
 adb push ~/projects/android/openvino/inference-engine/temp/vpu/libusb/libs/arm64-v8a/* /data/local/aarch64/Release/lib/
 // push libc++_shared.so
 adb push ~/projects/android/android-ndk/sources/cxx-stl/llvm-libc++/libs/arm64-v8a/libc++_shared.so /data/local/aarch64/Release/lib/
 adb push ~/projects/android/android-ndk/sources/cxx-stl/llvm-libc++/libs/arm64-v8a/* /data/local/aarch64/Release/lib/
-#push models & data
+// push models & data
 adb push ~/projects/android/models/person-detection-retail-0013.* /data/local/aarch64/
 adb push ~/projects/android/data/shopping-*.jpg /data/local/aarch64/
 ```
@@ -210,7 +212,6 @@ su
 cd /data/local/aarch64/Release
 export LD_LIBRARY_PATH=/data/local/aarch64/Release/lib/
 ./object_detection_sample_ssd -i ../shopping-family.jpg  -m ../person-detection-retail-0013.xml -d MYRIAD
-#Check output
 adb pull /data/local/aarch64/Release/out_0.bmp out_0.bmp 
 eog out_0.bmp
 ```
