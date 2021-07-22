@@ -1,8 +1,12 @@
 # EdgeBoard-VMX
 
-百度大脑 EdgeBoard-VMX 加速卡，采用 Intel® Movidus™ 视觉 MyriadX 处理器芯片，通过 USB Type-C 接口方式，配合外围电路即可将该模组嵌入到第三方智能化产品中，采用标准 USB3.0 通讯协议，对接简单，开发速度快，具有强大的深度学习计算功能。配合百度 PaddlePaddle 生态支持 PaddleX 和 Paddle2onnx/PaddleHub 等软件包并集成 EasyDL 可通过 OpenVINO™/OpenCV 软件库工具链移植算法。同时兼容 Linux，Android 和 Windows 环境，使产品应用范围广，性能更稳定，增强用户体验。
+百度大脑 [EdgeBoard-VMX](https://aim.baidu.com/product/3e1f397f-77ec-4f7f-846b-25e39d694f4f) 加速卡采用 Intel® Movidus™ 视觉 MyriadX 芯片 1TOPS 神经网络推理能力，自带 2 个 NCE 神经网络加速处理器，16 个可编程 128bit 处理器。采用标准 USB3 通讯协议通过 Type-C 接口方式，配合外围电路即可将该模组嵌入到第三方智能化产品中，对接简单，开发速度快，具有强大的深度学习计算功能。
 
-EdgeBoard-VMX 加速卡适用于深度学习加速，能够解决复杂的人工智能软硬件设计挑战，它可以集成基于视觉的加速器和推理引擎来实现深度边缘学习的解决方案。（3D/2D人脸识别、人头检测、人脸属性分析（性别、年龄）、人脸特征比对、手势及姿态识别、物体检测及分类、算法移植等功能。）
+<img src="platform/vmx-front-back.jpg" height="40%" width="40%">
+
+支持百度 PaddlePaddle 生态兼容 PaddleX 和 Paddle2onnx/PaddleHub 等软件包与 EasyDL 平台深度结合并可以广泛适配，可通过 OpenVINO™/OpenCV 软件库工具链移植算法。同时兼容 Linux，Android 和 Windows 环境，使产品应用范围更广，性能更稳定，增强用户体验并适用于安防、工业、医疗、零售等边缘计算应用场景。除了软件的多样性，硬件也采用了开放式设计。
+
+[EdgeBoard-VMX](https://aim.baidu.com/product/3e1f397f-77ec-4f7f-846b-25e39d694f4f) 加速卡适用于深度学习加速，能够解决复杂的人工智能软硬件设计挑战，它可以集成基于视觉的加速器和推理引擎来实现深度边缘学习的解决方案，比如集成 2D/3D 人脸识别特征比对、人头检测、人脸属性分析（性别、年龄）、手势及姿态识别、物体检测及分类、安全排查、工业质检、医疗筛查、零售分类、算法移植等功能。
 
 
 ## 飞桨生态 Paddle
