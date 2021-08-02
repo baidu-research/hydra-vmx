@@ -29,29 +29,29 @@ $ sudo lsusb -v | grep -C 5 Myriad
 	```
 - EasyDL SDK
 	```
-	从百度 AI 市场订单详情或者 EasyDL 控制台获取序列号
-	更换序列号、更换设备时，首次使用需要联网激活。激活成功之后，有效期内可离线使用。
-	请确保激活设备时使用的 操作系统账号与后续使用时运行的账号一致，否则会造成验证失败
+	Please visit [Baidu AI Cloud](https://login.bce.baidu.com/?lang=en) for order and S/N ID
+	Online activation is required when S/N and device are changed for the 1st time using
+	License can be used offline within the expiration period after activation
 	```
 
 
 ## Linux SDK
 - [Python SDK](https://cloud.baidu.com/doc/EASYDL/s/Bk7q4e4u5#python-sdk)
-	- 使用流程
-	- 接口说明
+	- Procedure
+	- Interface
 - [C++ SDK](https://cloud.baidu.com/doc/EASYDL/s/Bk7q4e4u5#c-sdk)
 
 
 ## Linux Usage
-- [使用流程](https://cloud.baidu.com/doc/EASYDL/s/Bk7q4e4u5#%E4%BD%BF%E7%94%A8%E6%B5%81%E7%A8%8B-1)
-- [运行参数配置](https://cloud.baidu.com/doc/EASYDL/s/Bk7q4e4u5#%E8%BF%90%E8%A1%8C%E5%8F%82%E6%95%B0%E9%85%8D%E7%BD%AE)
-- [初始化](https://cloud.baidu.com/doc/EASYDL/s/Bk7q4e4u5#%E5%88%9D%E5%A7%8B%E5%8C%96)
-- [预测图像](https://cloud.baidu.com/doc/EASYDL/s/Bk7q4e4u5#%E9%A2%84%E6%B5%8B%E5%9B%BE%E5%83%8F)
-- [预测视频](https://cloud.baidu.com/doc/EASYDL/s/Bk7q4e4u5#%E9%A2%84%E6%B5%8B%E8%A7%86%E9%A2%91)
-- [设置序列号](https://cloud.baidu.com/doc/EASYDL/s/Bk7q4e4u5#%E8%AE%BE%E7%BD%AE%E5%BA%8F%E5%88%97%E5%8F%B7)
-- [日志配置](https://cloud.baidu.com/doc/EASYDL/s/Bk7q4e4u5#%E6%97%A5%E5%BF%97%E9%85%8D%E7%BD%AE)
-- [HTTP服务](https://cloud.baidu.com/doc/EASYDL/s/Bk7q4e4u5#http%E6%9C%8D%E5%8A%A1)
-- [其他配置](https://cloud.baidu.com/doc/EASYDL/s/Bk7q4e4u5#%E5%85%B6%E4%BB%96%E9%85%8D%E7%BD%AE)
+- [Setup Procedure](https://cloud.baidu.com/doc/EASYDL/s/Bk7q4e4u5#%E4%BD%BF%E7%94%A8%E6%B5%81%E7%A8%8B-1)
+- [Parameter Configuration](https://cloud.baidu.com/doc/EASYDL/s/Bk7q4e4u5#%E8%BF%90%E8%A1%8C%E5%8F%82%E6%95%B0%E9%85%8D%E7%BD%AE)
+- [Initialization](https://cloud.baidu.com/doc/EASYDL/s/Bk7q4e4u5#%E5%88%9D%E5%A7%8B%E5%8C%96)
+- [Image Inference](https://cloud.baidu.com/doc/EASYDL/s/Bk7q4e4u5#%E9%A2%84%E6%B5%8B%E5%9B%BE%E5%83%8F)
+- [Video Inference](https://cloud.baidu.com/doc/EASYDL/s/Bk7q4e4u5#%E9%A2%84%E6%B5%8B%E8%A7%86%E9%A2%91)
+- [Set S/N](https://cloud.baidu.com/doc/EASYDL/s/Bk7q4e4u5#%E8%AE%BE%E7%BD%AE%E5%BA%8F%E5%88%97%E5%8F%B7)
+- [Log Configuration](https://cloud.baidu.com/doc/EASYDL/s/Bk7q4e4u5#%E6%97%A5%E5%BF%97%E9%85%8D%E7%BD%AE)
+- [HTTP Service](https://cloud.baidu.com/doc/EASYDL/s/Bk7q4e4u5#http%E6%9C%8D%E5%8A%A1)
+- [Other Configuration](https://cloud.baidu.com/doc/EASYDL/s/Bk7q4e4u5#%E5%85%B6%E4%BB%96%E9%85%8D%E7%BD%AE)
 
 
 ## Result
@@ -61,12 +61,12 @@ $ sudo lsusb -v | grep -C 5 Myriad
 
 ## Windows Setup
 - Installation
-	- [安装依赖](https://cloud.baidu.com/doc/EASYDL/s/Bk7q4e4u5#1-%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96)
-	- [离线SDK](https://cloud.baidu.com/doc/EASYDL/s/Bk7q4e4u5#2-%E8%BF%90%E8%A1%8C%E7%A6%BB%E7%BA%BFsdk)
-- [接口调用说明](https://cloud.baidu.com/doc/EASYDL/s/Bk7q4e4u5#%E6%8E%A5%E5%8F%A3%E8%B0%83%E7%94%A8%E8%AF%B4%E6%98%8E)
-	- 请求参数
-	- 返回参数
-	- 矩形坐标
+	- [Dependencies](https://cloud.baidu.com/doc/EASYDL/s/Bk7q4e4u5#1-%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96)
+- Execution
+	- [Offline SDK](https://cloud.baidu.com/doc/EASYDL/s/Bk7q4e4u5#2-%E8%BF%90%E8%A1%8C%E7%A6%BB%E7%BA%BFsdk)
+- Interface
+	- [APIs](https://cloud.baidu.com/doc/EASYDL/s/Bk7q4e4u5#%E6%8E%A5%E5%8F%A3%E8%B0%83%E7%94%A8%E8%AF%B4%E6%98%8E)
+	- Parameter, Return and Coordinates
 
 
 ## FAQ
