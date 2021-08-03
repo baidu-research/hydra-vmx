@@ -1,12 +1,10 @@
-# Paddle
+# PaddlePaddle
 
 ## System
 
 ## Dependency
 
 ## Usage
-
-## Result
 
 ## FAQ
 
