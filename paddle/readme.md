@@ -16,6 +16,14 @@ Paddle has been expanded and upgraded in an all-round way, supporting the unifie
 - [Data Split](https://github.com/PaddlePaddle/PaddleX/blob/develop/docs/data/split.md)
 
 ## Model
+Currently, we also support deploy Paddle model through OpenVINO, the whole process can be summary as the following steps
+- Get a PaddlePaddle model, which is exported as inference model, contains `mymodel.pdmodel` and `mymodel.pdiparams`
+- Export PaddlePaddle model to ONNX format by [Paddle2ONNX](https://github.com/PaddlePaddle/Paddle2ONNX.git)
+- Export ONNX model to OpenVINO IR
+Please refer to [Paddle2ONNX](https://github.com/PaddlePaddle/Paddle2ONNX.git) for more details.
+
+Also, PaddleX has provided C++ codes support deploy PaddlePaddle model by OpenVINO, the following documents shows how to deploy PaddleX model
+- [Deploy PaddleX by OpenVINO](https://paddlex.readthedocs.io/zh_CN/release-1.3/deploy/openvino/index.html)
 - [API Mode](https://github.com/PaddlePaddle/PaddleX/tree/develop/docs/apis)
 - [Training](https://github.com/PaddlePaddle/PaddleX/tree/develop/tutorials/train)
 - [VisualDL](https://github.com/PaddlePaddle/PaddleX/blob/develop/docs/visualdl.md)
