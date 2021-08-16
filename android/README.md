@@ -84,6 +84,7 @@ make PREFIX=~/projects/android/OpenBLAS/install install
 NDK Setup:
 ```
 cd ~/projects/android
+// Download latest Android NDK or R20(default) as below
 wget https://dl.google.com/android/repository/android-ndk-r20-linux-x86_64.zip
 unzip android-ndk-r20-linux-x86_64.zip 
 mv android-ndk-r20 android-ndk
@@ -91,7 +92,7 @@ mv android-ndk-r20 android-ndk
 
 Platform Tools:
 ```
-// Download platform-tools_r30.0.3-linux.zip from Android
+// Download latest platform-tools or r30.0.3(default) from Android
 https://developer.android.com/studio/releases/platform-tools#downloads
 // Setup to:
 ~/projects/android/platform-tools
@@ -211,14 +212,13 @@ adb shell
 su
 cd /data/local/aarch64/Release
 export LD_LIBRARY_PATH=/data/local/aarch64/Release/lib/
-./object_detection_sample_ssd -i ../shopping-family.jpg  -m ../person-detection-retail-0013.xml -d MYRIAD
-adb pull /data/local/aarch64/Release/out_0.bmp out_0.bmp 
+./object_detection_sample_ssd -i ../friends.png  -m ../person-detection-retail-0013.xml -d MYRIAD
+./object_detection_sample_ssd -i ../crowd.jpg  -m ../person-detection-retail-0013.xml -d MYRIAD
+adb pull /data/local/aarch64/Release/out_0.bmp out_0.bmp
 eog out_0.bmp
 ```
 
 Results Examples:	
-
-<img src="family.png" height="30%" width="30%"> <img src="family-ok.png" height="30%" width="30%">	
 
 <img src="friends.png" height="30%" width="30%"> <img src="friends-ok.png" height="30%" width="30%">	
 

@@ -20,6 +20,7 @@ Currently, we also support deploy Paddle model through OpenVINO, the whole proce
 - Get a PaddlePaddle model, which is exported as inference model, contains `mymodel.pdmodel` and `mymodel.pdiparams`
 - Export PaddlePaddle model to ONNX format by [Paddle2ONNX](https://github.com/PaddlePaddle/Paddle2ONNX.git)
 - Export ONNX model to OpenVINO IR
+
 Please refer to [Paddle2ONNX](https://github.com/PaddlePaddle/Paddle2ONNX.git) for more details.
 
 Also, PaddleX has provided C++ codes support deploy PaddlePaddle model by OpenVINO, the following documents shows how to deploy PaddleX model

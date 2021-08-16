@@ -11,7 +11,7 @@ $ sudo lsusb -v | grep -C 5 Myriad
   idProduct          0x2485
   bcdDevice            0.01
   iManufacturer           1 Movidius Ltd.
-  iProduct                2 Movidius MyriadX
+  iProduct                2 Movidius Myriad
   iSerial                 3 03e72485
   bNumConfigurations      1
   Configuration Descriptor:
